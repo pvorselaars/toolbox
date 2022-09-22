@@ -1,5 +1,4 @@
 FROM debian:testing-slim
-
 RUN export DEBIAN_FRONTEND=noninteractive
 
 # Install system components
@@ -21,4 +20,8 @@ RUN apt update
 # Install tools
 RUN apt install --no-install-recommends -y curl gnupg git azure-cli google-cloud-cli golang terraform nomad jq powershell kubectl
 
+# Setup user
+COPY setup.sh /tmp/setup.sh
+
+ENTRYPOINT [ "/tmp/setup.sh" ]
 CMD ["bash"]
