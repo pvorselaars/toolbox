@@ -8,5 +8,11 @@ A Debian based image containing various tools that I use on a daily basis.
 
 * curl
 * gnupg
+* git
 * azure-cli
 * google-cloud-cli
+* golang
+* terraform
+* nomad
+* powershell
+* jq
