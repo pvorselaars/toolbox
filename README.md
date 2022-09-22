@@ -16,3 +16,4 @@ A Debian based image containing various tools that I use on a daily basis.
 * nomad
 * powershell
 * jq
+* kubectl

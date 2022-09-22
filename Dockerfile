@@ -19,6 +19,6 @@ RUN echo "deb [signed-by=/usr/share/keyrings/hashicorp.gpg] https://apt.releases
 RUN apt update
 
 # Install tools
-RUN apt install --no-install-recommends -y curl gnupg git azure-cli google-cloud-cli golang terraform nomad jq powershell
+RUN apt install --no-install-recommends -y curl gnupg git azure-cli google-cloud-cli golang terraform nomad jq powershell kubectl
 
 CMD ["bash"]
