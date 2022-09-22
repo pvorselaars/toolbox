@@ -3,7 +3,7 @@ RUN export DEBIAN_FRONTEND=noninteractive
 
 # Install system components
 RUN apt update
-RUN apt install -y curl gnupg apt-transport-https lsb-release
+RUN apt install -y curl gnupg apt-transport-https lsb-release python3-pip gosu procps sudo
 
 # Adding additional repositories
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/google.gpg add -
@@ -18,7 +18,7 @@ RUN echo "deb [signed-by=/usr/share/keyrings/hashicorp.gpg] https://apt.releases
 RUN apt update
 
 # Install tools
-RUN apt install --no-install-recommends -y curl gnupg git azure-cli google-cloud-cli golang terraform nomad jq powershell kubectl
+RUN apt install --no-install-recommends -y curl gnupg git azure-cli google-cloud-cli golang terraform nomad jq powershell kubectl docker.io
 
 # Setup user
 COPY setup.sh /tmp/setup.sh

@@ -1,11 +1,8 @@
 #!/bin/sh
 USER=${USER:-dev}
 
-useradd -m -s /bin/bash $USER
+useradd -s /bin/bash $USER -p "" -G sudo,docker
+chown $USER /home/$USER
 
-if [ $@ = "bash" ]
-then
-  su - $USER
-else
-  su - $USER -c $@
-fi
+exec gosu $USER $@
+echo "Goodbye!"

@@ -17,3 +17,4 @@ A Debian based image containing various tools that I use on a daily basis.
 * powershell
 * jq
 * kubectl
+* docker
