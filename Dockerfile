@@ -23,8 +23,11 @@ RUN apt update
 # Install tools
 RUN apt install --no-install-recommends -y azure-cli google-cloud-cli golang terraform nomad jq powershell kubectl docker.io
 
+# Modify .bashrc
+RUN echo cd '$HOME' >> /etc/bash.bashrc
+
 # Setup user
 COPY setup.sh /tmp/setup.sh
 
-ENTRYPOINT [ "/tmp/setup.sh" ]
+ENTRYPOINT ["/tmp/setup.sh"]
 CMD ["bash"]

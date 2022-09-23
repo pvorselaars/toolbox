@@ -6,10 +6,22 @@ A Debian based image containing various tools that I use on a daily basis. Enabl
 
 ## usage
 
-Below a simple example of how this can be used.
+Some simple examples of how this can be used assuming you have Docker installed.
+
+### without persistence
 
 ```
 $ tools()( 
+  docker run --name toolbox -h toolbox -e USER=dev -v /var/run/docker.sock:/var/run/docker.sock --rm -it ghcr.io/pvorselaars/toolbox
+  )
+$ tools
+dev@toolbox:~$
+```
+
+### with persistence
+```
+$ tools()( 
+  docker attach toolbox || echo Creating container: toolbox
   docker run --name toolbox -h toolbox -e USER=dev -v /var/run/docker.sock:/var/run/docker.sock -v toolbox:/home/dev/ --rm -it ghcr.io/pvorselaars/toolbox
   )
 $ tools
