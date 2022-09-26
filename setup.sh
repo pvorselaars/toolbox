@@ -7,3 +7,4 @@ chown $USER /home/$USER
 gosu $USER chezmoi init --apply https://github.com/$USER/dotfiles.git
 
 exec gosu $USER $@
+exit 0
