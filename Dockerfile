@@ -22,6 +22,7 @@ RUN apt update
 
 # Install tools
 RUN apt install --no-install-recommends -y azure-cli google-cloud-cli golang terraform nomad jq powershell kubectl docker.io neovim
+RUN apt install --no-install-recommends -y build-essential
 
 # Install chezmoi
 RUN curl -qL -o chezmoi.deb $(curl -s https://api.github.com/repos/twpayne/chezmoi/releases/latest | jq -r '.assets[] | select( .name | contains("amd64.deb")) | .browser_download_url')

@@ -1,6 +1,8 @@
 #!/bin/sh
 USER=${USER:-dev}
 
+apt update
+
 useradd -m -s /bin/bash $USER -p "" -G sudo,docker
 chown $USER /home/$USER
 
