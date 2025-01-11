@@ -1,6 +1,9 @@
 name: build
 on:
   push:
+    paths:
+      - Dockerfile
+      - entry.sh
     branches:
       - main
 
