@@ -12,7 +12,7 @@ Some simple examples of how this can be used assuming you have Docker installed.
 
 ```
 $ tools()( 
-  docker run -n toolbox -e USER=dev --rm -it ghcr.io/pvorselaars/toolbox
+  docker run -h toolbox -e USER=dev --rm -it ghcr.io/pvorselaars/toolbox
   )
 $ tools
 root@toolbox:~$
@@ -21,7 +21,7 @@ root@toolbox:~$
 ### with persistence
 ```
 $ tools()( 
-  docker attach toolbox || docker run --name toolbox -e USER=dev -v toolbox:/home/dev/ -it ghcr.io/pvorselaars/toolbox
+  docker attach toolbox || docker run --name toolbox -h toolbox -e USER=dev -v toolbox:/home/dev/ -it ghcr.io/pvorselaars/toolbox
   )
 $ tools
 root@toolbox:~$
