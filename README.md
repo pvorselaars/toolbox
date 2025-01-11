@@ -12,20 +12,19 @@ Some simple examples of how this can be used assuming you have Docker installed.
 
 ```
 $ tools()( 
-  docker run --name toolbox -h toolbox -e USER=dev -v /var/run/docker.sock:/var/run/docker.sock --rm -it ghcr.io/pvorselaars/toolbox
+  docker run -n toolbox -e USER=dev --rm -it ghcr.io/pvorselaars/toolbox
   )
 $ tools
-dev@toolbox:~$
+root@toolbox:~$
 ```
 
 ### with persistence
 ```
 $ tools()( 
-  docker attach toolbox || echo Creating container: toolbox
-  docker run --name toolbox -h toolbox -e USER=dev -v /var/run/docker.sock:/var/run/docker.sock -v toolbox:/home/dev/ --rm -it ghcr.io/pvorselaars/toolbox
+  docker attach toolbox || docker run --name toolbox -e USER=dev -v toolbox:/home/dev/ -it ghcr.io/pvorselaars/toolbox
   )
 $ tools
-dev@toolbox:~$
+root@toolbox:~$
 ```
 
 ## tools
