@@ -2,7 +2,7 @@
 
 [![build](https://github.com/pvorselaars/toolbox/actions/workflows/build.yml/badge.svg)](https://github.com/pvorselaars/toolbox/actions/workflows/build.yml)
 
-A Debian based image containing various tools that I use on a daily basis. Enables a fresh development container everyday with only minimal persistence. 
+A Alpine based image containing various tools. Enables a fresh development container everyday with only minimal persistence. 
 
 ## usage
 
@@ -32,23 +32,17 @@ dev@toolbox:~$
 
 An non-exhaustive list of the binaries and scripts included in this image.
 
-* gnupg
+* busybox
 * git
-* net-tools
-* iproute2
-* iputils
-* netcat
+* gnupg
+* bind-tools
 * curl
-* dnsutils
 * tcpdump 
-* iptables 
-* mtr-tiny 
-* azure-cli
-* google-cloud-cli
-* terraform
-* nomad
-* docker
 * kubectl
 * golang
 * powershell
-* jq
+* dasel
+* dog
+* asciinema
+* httpie
+* neovim
